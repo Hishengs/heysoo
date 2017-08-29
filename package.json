@@ -1,0 +1,27 @@
+{
+  "name": "heysoo",
+  "version": "0.0.1",
+  "description": "A future node web app base on Koa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hisheng",
+  "license": "MIT",
+  "dependencies": {
+    "consolidate": "^0.14.5",
+    "koa": "^2.3.0",
+    "koa-body": "^2.3.0",
+    "koa-mount": "^3.0.0",
+    "koa-static": "^4.0.1",
+    "koa-router": "^7.2.1",
+    "node-schedule": "^1.2.4",
+    "debug": "^3.0.0",
+    "sequelize": "^4.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hishengs/heysoo.git"
+  },
+  "files": ["lib","index.js"]
+}
