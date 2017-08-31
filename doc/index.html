@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <title>doc</title>
+  <link rel="stylesheet" href="https://unpkg.com/docute@3/dist/docute.css">
+</head>
+<body>
+  <div id="app"></div>
+  <script src="https://unpkg.com/docute@3/dist/docute.js"></script>
+  <script>
+    docute.init({
+      tocVisibleDepth: 2,
+      nav: [
+        { title: '首页', path: '/' },
+        { title: '控制器', path: '/controller' },
+        { title: '路由', path: '/router' },
+        { title: '逻辑层', path: '/service' },
+        { title: '视图层', path: '/view' },
+        { title: '静态文件', path: '/static' },
+        { title: '数据库', path: '/database' },
+        { title: '定时任务', path: '/schedule' },
+        { title: '更新日志', path: '/updates' },
+      ]
+    })
+  </script>
+</body>
+</html>
