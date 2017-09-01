@@ -6,7 +6,8 @@ module.exports = app => {
 		}
 
 		async index (){
-			this.ctx.body = 'Heysoo';
+			// this.ctx.body = 'Heysoo';
+			await this.ctx.render('index.html');
 		}
 
 	}

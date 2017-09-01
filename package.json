@@ -23,5 +23,11 @@
     "type": "git",
     "url": "git+https://github.com/hishengs/heysoo.git"
   },
-  "files": ["lib","index.js"]
+  "files": [
+    "lib",
+    "index.js"
+  ],
+  "devDependencies": {
+    "nunjucks": "^3.0.1"
+  }
 }

@@ -29,7 +29,7 @@ module.exports = app => {
 ## 支持方法
 `GET, POST, PUT, DELETE, PATCH`
 
-## 匹配模式
+## 使用方式
 
 ### 直接指定方法
 ```js
@@ -85,6 +85,20 @@ app.router.group({
 	controller: 'user'
 },() => {
 	app.router.get('/user/name','getName'); // 相当于 app.router.get('/user/name','user.getName'); 
+})
+```
+
+## 具名路由
+```js
+app.router.get('/', 'home.index',{
+	name: 'home'
+})
+```
+
+## 路由参数
+```js
+app.router.get('/user/:id',function(){
+	this.ctx.body = 'user ' + this.ctx.params.id;
 })
 ```
 
