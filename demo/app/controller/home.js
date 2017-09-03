@@ -10,6 +10,15 @@ module.exports = app => {
 			await this.ctx.render('index.html');
 		}
 
+		van (){
+			// console.log(this.ctx.app.router)
+			this.ctx.body = this.ctx.app.router.currentRoute()
+		}
+
+		car (){
+			this.ctx.body = 'car'
+		}
+
 	}
 	return new HomeController();
 }

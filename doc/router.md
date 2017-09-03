@@ -59,7 +59,7 @@ app.router.redirect('/a', '/b')
 
 ### 输出页面
 ```js
-app.router.view('/login', 'login')
+app.router.view('/index','index.html')
 ```
 
 ### 链式调用
@@ -72,8 +72,8 @@ app.router
 
 ## 路由分组
 ```js
-app.router.group(options,() => {
-	app.router.get('/name',app.controller.user.getName);
+app.router.group(options,router => {
+	router.get('/name',app.controller.user.getName);
 })
 ```
 通过 `options` 可以对分组进行更加详细的设置
@@ -82,9 +82,26 @@ app.router.group(options,() => {
 
 ```js
 app.router.group({
-	controller: 'user'
-},() => {
-	app.router.get('/user/name','getName'); // 相当于 app.router.get('/user/name','user.getName'); 
+	controller: 'home'
+}, router => {
+	router.get('/car','car') // equals 'home.car'
+	router.get('/van','van') // equals 'home.van'
+})
+```
+
+### 前缀分组
+```js
+app.router.group({
+	prefix: '/user'
+}, router => {
+	router.view('/','user.html');
+	router.redirect('/home','/');
+	router.get('/name',function(){
+		this.ctx.body = 'user group: name'
+	})
+	router.get('/info',function(){
+		this.ctx.body = 'user group: info'
+	})
 })
 ```
 
@@ -101,19 +118,24 @@ app.router.get('/user/:id',function(){
 	this.ctx.body = 'user ' + this.ctx.params.id;
 })
 ```
+> 在控制器方法中也可以通过 `this.ctx.params` 获取参数。
 
-### 前缀分组
-```js
-app.router.group({
-	prefix: 'user'
-},() => {
-	// 相当于 app.router.get('/user/name',app.controller.user.getName); 
-	app.router.get('/name',app.controller.user.getName); 
-	// 相当于 app.router.get('/user/name',app.controller.user.getInfo); 
-	app.router.get('/info',app.controller.user.getInfo); 
-})
-```
+
 ## API
-在 `controller`, `service` 方法中可以通过 `this.ctx.router[methodName]` 的方式引用相关的 API 方法。
+在 `controller`, `service` 方法中可以通过 `this.ctx.app.router[methodName]` 的方式引用相关的 API 方法。
 
-### redirectTo
+### getUrl
+> getUrl(routeName,params) 通过路由名称获取路径。
+routeName: 路由名称
+params: 传递给路由的参数
+
+```js
+this.router.getUrl('userInfo') // '/user/info'
+this.router.getUrl('user',{id: 2333}) // '/user/2333'
+```
+
+### currentRoute
+> 取得当前路由。
+
+### currentRouteName
+> 取得当前路由名称。

@@ -21,5 +21,15 @@ module.exports = {
   },
   static: {
     path: 'static', // 路径
-  }
+  },
+  database: {
+    enabled: true,
+    orm: 'sequelize',
+    type: 'mysql',
+    host: 'localhost',
+    port: 3306,
+    username: 'root',
+    password: '8355189',
+    dbname: 'gumi',
+  },
 }
