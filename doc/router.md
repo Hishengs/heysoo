@@ -50,8 +50,12 @@ app.router.get('/', app.controller.home.index)
 app.router.get('/', 'home.index')
 ```
 
-### 使用方法
-
+### 正则
+```js
+app.router.get(/ab?cd/,async function(){
+	this.ctx.body = 'ab?cd'
+})
+```
 ### 重定向
 ```js
 app.router.redirect('/a', '/b')

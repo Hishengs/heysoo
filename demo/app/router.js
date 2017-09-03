@@ -11,6 +11,9 @@ module.exports = app => {
 		this.ctx.body = 'user ' + this.ctx.params.id;
 	})*/
 	// app.router.get('/user/:id',app.controller.home.user)
+	app.router.get(/ab?cd/,async function(){
+		this.ctx.body = 'ab?cd'
+	})
 
 	app.router.group({
 		prefix: '/user'
