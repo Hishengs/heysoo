@@ -13,6 +13,10 @@ npm install heysoo --save
 const Heysoo = require('heysoo');
 const app = new Heysoo();
 
+app.use(async ctx => {
+  ctx.body = 'hello, world.';
+});
+
 app.start();
 ```
 此时访问 localhost:86 即可。
