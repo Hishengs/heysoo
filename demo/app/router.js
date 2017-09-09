@@ -2,7 +2,16 @@ module.exports = app => {
 	app.router.get('/greet',async function(){
 		this.ctx.body = 'hello,world'
 	}).get('/name',async function(){
-		this.ctx.body = 'Hisheng'
+		// this.ctx.body = 'Hisheng'
+		/*this.ctx.with({
+			status: 403,
+			header: {
+				'Content-Type': 'application/json',
+				'hi': 'man'
+			}
+		}).send('hi man')*/
+		this.ctx.debug('query',this.ctx.request.query.xxx)
+		this.ctx.withStatus(404).send('hi man')
 	})
 	app.router.get('/','home.index')
 	app.router.redirect('/hi','/greet')
@@ -33,5 +42,10 @@ module.exports = app => {
 	}, router => {
 		router.get('/car','car')
 		router.get('/van','van')
+	})
+
+	app.router.get('/file',async function(){
+		const path = require('path')
+		this.ctx.download(path.join('./test.png'))
 	})
 }
