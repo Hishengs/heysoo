@@ -1,3 +1,3 @@
 cls
-set DEBUG=Heysoo,-not_this
+set DEBUG=Heysoo:*,-not_this
 supervisor index.js

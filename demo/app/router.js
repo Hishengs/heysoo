@@ -10,7 +10,6 @@ module.exports = app => {
 				'hi': 'man'
 			}
 		}).send('hi man')*/
-		this.ctx.debug('query',this.ctx.request.query.xxx)
 		this.ctx.withStatus(404).send('hi man')
 	})
 	app.router.get('/','home.index')

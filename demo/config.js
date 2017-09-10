@@ -11,6 +11,7 @@ module.exports = {
     schedule: 'schedule'
   },
   view: {
+    enabled: true,
     engine: 'nunjucks',
     options: {
       autoescape: true,
@@ -20,6 +21,7 @@ module.exports = {
     extension: '.html',
   },
   static: {
+    enabled: true,
     path: 'static', // 路径
   },
   database: {
@@ -32,4 +34,5 @@ module.exports = {
     password: '8355189',
     dbname: 'gumi',
   },
+  logRequestTime: true
 }
