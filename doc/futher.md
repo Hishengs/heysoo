@@ -59,6 +59,21 @@ this.ctx.http.post(url,postData);
 ## master/worker
 **状态** <span class="badge badge-primary">working</span>
 
+## middlewares / 中间件
+完全兼容 Koa 的中间件用法：
+```js
+const Heysoo = require('../index.js');
+
+const app = new Heysoo();
+
+app.use(async (ctx,next) => {
+	console.log('middleware test.');
+	await next();
+});
+
+app.start();
+```
+
 ## mock
 如果你的团队采用前后端分离的技术框架，那么 mock 数据模拟是很常见的应用。这样只要事先前后端约定好接口和数据格式，后端无需等接口完成，只需简单地模拟一些假数据给前端调试即可。
 
@@ -76,4 +91,7 @@ const randomInt = this.ctx.Mock.mock('@integer(0, 100);
 **状态** <span class="badge badge-primary">working</span>
 
 ## session
+**状态** <span class="badge badge-primary">working</span>
+
+## validator
 **状态** <span class="badge badge-primary">working</span>

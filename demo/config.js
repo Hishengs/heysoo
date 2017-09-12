@@ -1,6 +1,6 @@
 module.exports = {
   host: 'localhost',
-  port: 86,
+  port: 8001,
   folder: {
     app: 'app',
     controller: 'controller',
@@ -13,12 +13,7 @@ module.exports = {
   view: {
     enabled: true,
     engine: 'nunjucks',
-    options: {
-      autoescape: true,
-      noCache: true,
-      watch: true
-    },
-    extension: '.html',
+    // manual: true
   },
   static: {
     enabled: true,

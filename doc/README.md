@@ -24,19 +24,19 @@ app.start();
 ## 进一步配置
 首先介绍一下一个典型的 Heysoo 项目的目录结构：
 ```js
-- root
-  - app `// 主要应用目录`
-    - controller
-    - service
-    - view
-    - model
-    - static
-    - schedule
-    - router.js `// 全局路由配置`
-  - node_modules
-  - index.js `// 启动文件`
-  - config.js `// 项目配置文件`
-  - package.json
+—— root
+   ├── app `// 主要应用目录`
+   |   ├── controller
+   |   ├── service
+   |   ├── view
+   |   ├── model
+   |   ├── static
+   |   ├── schedule
+   |   ├── router.js `// 全局路由配置`
+   ├── node_modules
+   ├── index.js `// 启动文件`
+   ├── config.js `// 项目配置文件`
+   ├── package.json
 ```
 下面我们通过一步一步修改的方式完成以上所有功能的配置。
 首先，编写一个简单的配置文件 `config.js`
@@ -59,18 +59,18 @@ module.exports = {
 
 此时，我们的项目目录结构变成这样
 ```js
-- root
-  - application
-    - c
-    - s
-    - v
-    - m
-    - p
-    - sc
-    - router.js
-  - node_modules
-  - index.js
-  - config.js
+── root
+   ├── application
+   |   ├── c
+   |   ├── s
+   |   ├── v
+   |   ├── m
+   |   ├── p
+   |   ├── sc
+   |   ├── router.js
+   ├── node_modules
+   ├── index.js
+   ├── config.js
 ```
 > 注意：所有的目录都不是必要的，在此示例中我们仅仅会用到 c(控制器) 这个目录来作介绍。
 
@@ -104,7 +104,8 @@ module.exports = app => {
 
 
 ## 依赖说明
-Heysoo 对 Node 版本最低要求是 7.6.0 +(为了使用最新的 async/await 特性)。
+Node
+> Heysoo 对 Node 版本最低要求是 7.6.0 +(为了使用最新的 async/await 特性)。
 如果你的 Node 版本比较低，可以考虑通过 babel 进行 polyfill。
 
 ## 特性

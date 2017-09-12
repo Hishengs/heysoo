@@ -10,6 +10,7 @@ module.exports = app => {
 				'hi': 'man'
 			}
 		}).send('hi man')*/
+		console.log(typeof this.ctx.render)
 		this.ctx.withStatus(404).send('hi man')
 	})
 	app.router.get('/','home.index')

@@ -11,4 +11,10 @@ const app = new Heysoo();
   ctx.body = 'hello, world.';
 });*/
 
+/*const nunjucks = require('nunjucks');
+app.view.setEngine(nunjucks.configure({
+	autoescape: true,
+	noCache: true
+}));*/
+
 app.start();
