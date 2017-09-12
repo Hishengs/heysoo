@@ -154,7 +154,7 @@ this.ctx.doneWithError(err.toString());
 
 **别名** `context.download`
 
-**定义** response.download(filePath)
+**定义** `response.download(filePath)`
 
 ### response.json
 **简介** 输出一个 JSON 对象
@@ -190,7 +190,7 @@ this.ctx.doneWithError(err.toString());
 
 **别名** `context.with`
 
-**定义** response.with(setting)
+**定义** `response.with(setting)`
 
 **参数** 
 

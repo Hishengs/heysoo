@@ -7,14 +7,12 @@ const Heysoo = require('../index.js');
 
 const app = new Heysoo();
 
-/*app.use(async ctx => {
-  ctx.body = 'hello, world.';
-});*/
-
-/*const nunjucks = require('nunjucks');
-app.view.setEngine(nunjucks.configure({
-	autoescape: true,
-	noCache: true
-}));*/
-
+app.hook(app => {
+	const nunjucks = require('nunjucks');
+	app.view.setEngine(nunjucks.configure({
+		autoescape: true,
+		noCache: true
+	}));
+});
+	
 app.start();

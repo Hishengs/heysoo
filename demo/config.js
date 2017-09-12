@@ -13,7 +13,7 @@ module.exports = {
   view: {
     enabled: true,
     engine: 'nunjucks',
-    // manual: true
+    manual: true
   },
   static: {
     enabled: true,
