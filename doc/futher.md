@@ -39,6 +39,13 @@ Heysoo 框架会在每次 POST 请求中检查该字段，如果不存在或不�
 }
 ```
 
+## hook / 钩子
+**状态** <span class="badge badge-primary">working</span>
+### app.beforeStart
+### app.hook
+等同于 `app.beforeStart`
+### app.beforeRouterStart
+
 ## httpClient
 框架本身不内置此功能，你可以通过插件的形式选择自己喜欢的 http 请求库(例如 [axios](https://github.com/mzabriskie/axios))集成到框架中来，用以例如向第三方站点发起认证请求或资源请求。
 ```js
@@ -59,8 +66,8 @@ this.ctx.http.post(url,postData);
 ## master/worker
 **状态** <span class="badge badge-primary">working</span>
 
-## middlewares / 中间件
-完全兼容 Koa 的中间件用法：
+## middleware / 中间件
+完全兼容 Koa 的中间件用法，你可以在应用启动之前加载你自己的中间件：
 ```js
 const Heysoo = require('../index.js');
 
@@ -73,6 +80,46 @@ app.use(async (ctx,next) => {
 
 app.start();
 ```
+Heysoo 提供了简便的方法来更好的组织你的中间件：
+
+首先在配置文件中声明中间件目录：
+```js
+module.exports = {
+	folder: {
+		middleware: 'mw' // 如果不指定默认是 middleware
+	},
+	// 中间件配置
+	middleware: {
+		use: ['mw1','mw2'], // 指定所有要加载的中间件，加载顺序按排列顺序
+		options: {} // 一些通用的配置，可以通过 app.config.middleware.options 获取
+	}
+}
+```
+你的中间件目录：
+```js
+	mw
+	 ├── mw1.js
+	 ├── mw2.js
+```
+mw1.js
+```js
+module.exports = app => {
+	app.use(async (ctx,next) => {
+		console.log('This is mw1');
+		await next();
+	});
+}
+```
+mw2.js
+```js
+module.exports = app => {
+	app.use(async (ctx,next) => {
+		console.log('This is mw2');
+		await next();
+	});
+}
+```
+框架会检测是否存在中间件目录，然后按指定中间件及顺序执行所有的中间件。
 
 ## mock
 如果你的团队采用前后端分离的技术框架，那么 mock 数据模拟是很常见的应用。这样只要事先前后端约定好接口和数据格式，后端无需等接口完成，只需简单地模拟一些假数据给前端调试即可。

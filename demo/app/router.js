@@ -48,4 +48,13 @@ module.exports = app => {
 		const path = require('path')
 		this.ctx.download(path.join('./test.png'))
 	})
+
+	app.router.get('/logger-test',function(){
+		const sentence = 'this is a logger test';
+		this.ctx.logger.info(sentence);
+		this.ctx.logger.success(sentence);
+		this.ctx.logger.error(sentence);
+		this.ctx.logger.warn(sentence);
+		this.ctx.send(sentence);
+	})
 }

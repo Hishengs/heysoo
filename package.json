@@ -4,11 +4,12 @@
   "description": "A future node web app base on Koa",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava --verbose"
   },
   "author": "Hisheng",
   "license": "MIT",
   "dependencies": {
+    "chalk": "^2.1.0",
     "consolidate": "^0.14.5",
     "debug": "^3.0.0",
     "delegates": "^1.0.0",
@@ -28,11 +29,14 @@
     "index.js"
   ],
   "devDependencies": {
+    "ava": "^0.22.0",
     "babel": "^6.23.0",
     "babel-core": "^6.26.0",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.1.2",
     "koa-views": "^5.2.1",
+    "mocha": "^3.5.3",
     "mysql2": "^1.4.2",
     "nunjucks": "^3.0.1",
     "sequelize": "^4.2.0"
