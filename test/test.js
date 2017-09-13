@@ -1,6 +1,6 @@
-/*const should = require('chai').should();
-const expect = require('chai').expect;
-const assert = require('chai').assert;
+const should = require('chai').should();
+// const expect = require('chai').expect;
+// const assert = require('chai').assert;
 
 describe('test group 1', function() {
 
@@ -21,13 +21,13 @@ describe('test group 1', function() {
 
   describe('check age', function() {
     it('age should be 21', function() {
-      expect(age).to.equal(22);
+      age.should.be.eql(21);
     });
   });
 
-});*/
+});
 
-import test from 'ava';
+/*import test from 'ava';
 
 const name = 'Hisheng';
 const age = 21;
@@ -57,4 +57,4 @@ test.skip('skip this',t => {
 	t.is(name,'Hisheng');
 });
 
-test.todo('will do this later');
+test.todo('will do this later');*/
