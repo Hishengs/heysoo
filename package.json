@@ -41,7 +41,7 @@
     "babel-preset-es2015": "^6.24.1",
     "chai": "^4.1.2",
     "eslint": "^4.6.0",
-    "eslint-config-airbnb-base": "^12.0.0",
+    "eslint-config-bitpower": "0.0.1",
     "eslint-plugin-import": "^2.7.0",
     "koa-views": "^5.2.1",
     "mocha": "^3.5.3",
