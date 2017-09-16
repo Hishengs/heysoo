@@ -1,24 +1,22 @@
-module.exports = app => {
-	class HomeController extends app.Controller {
+module.exports = (app) => {
 
-		constructor (){
-			super();
-		}
+  class HomeController extends app.Controller {
 
-		async index (){
-			// this.ctx.body = 'Heysoo';
-			await this.ctx.render('index.html');
-		}
+    async index() {
+      const userController = this.ctx.getController('user');
+      await userController.index();
+      // await this.ctx.render('index.html');
+    }
 
-		van (){
-			// console.log(this.ctx.app.router)
-			this.ctx.body = this.ctx.app.router.currentRoute()
-		}
+    van() {
+      this.ctx.body = this.ctx.app.router.currentRoute();
+    }
 
-		car (){
-			this.ctx.body = 'car'
-		}
+    car() {
+      this.ctx.body = 'car';
+    }
 
-	}
-	return new HomeController();
-}
+  }
+
+  return HomeController;
+};

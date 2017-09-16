@@ -20,7 +20,7 @@ module.exports = {
     path: 'static', // 路径
   },
   database: {
-    enabled: true,
+    enabled: false,
     orm: 'sequelize',
     type: 'mysql',
     host: 'localhost',
@@ -30,4 +30,4 @@ module.exports = {
     dbname: 'gumi',
   },
   logRequestTime: true
-}
+};

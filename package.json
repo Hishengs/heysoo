@@ -6,7 +6,8 @@
   "scripts": {
     "ava": "ava --verbose",
     "mocha": "mocha --watch",
-    "eslint": "eslint lib/*"
+    "eslint": "eslint lib/*",
+    "doc": "docute doc -w -p 72"
   },
   "author": "Hisheng",
   "license": "MIT",
