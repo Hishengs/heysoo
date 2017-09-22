@@ -1,7 +1,4 @@
-require('babel-core/register')({
-  // "presets": ['es2015'],
-  "plugins": ["transform-async-to-generator"]
-});
+require('babel-core/register');
 
 const Heysoo = require('../index.js');
 
