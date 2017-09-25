@@ -1,6 +1,6 @@
 {
   "name": "heysoo",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "A future node web app base on Koa",
   "main": "index.js",
   "scripts": {
