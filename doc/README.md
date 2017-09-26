@@ -103,7 +103,7 @@ module.exports = app => {
 ## 依赖说明
 Node
 > Heysoo 对 Node 版本最低要求是 7.6.0 +（为了使用最新的 async/await 特性）。
-如果你的 Node 版本比较低，可以考虑通过 babel 进行 polyfill。
+如果你的 Node 版本比较低，可以考虑通过 babel 进行 polyfill，参见 [如何 polyfill？](/FAQ?id=%E5%A6%82%E4%BD%95-polyfill%EF%BC%9F)。
 
 ## 特性
 ### ![](./imgs/icons/config.png) 可配置，可拆卸
