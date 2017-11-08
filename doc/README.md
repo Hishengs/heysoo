@@ -39,7 +39,7 @@ app.start();
    ├── package.json
 ```
 下面我们通过一步一步修改的方式完成以上所有功能的配置。
-首先，编写一个简单的配置文件 `config.js`
+首先，编写一个简单的配置文件 `config.js`：
 ```js
 module.exports = {
   host: 'localhost',
@@ -57,7 +57,7 @@ module.exports = {
 ```
 > 更详细的配置参见 [`配置`](./#/config) 模块。
 
-此时，我们的项目目录结构变成这样
+此时，我们的项目目录结构变成这样：
 ```js
 ── root
    ├── application
@@ -74,14 +74,13 @@ module.exports = {
 ```
 > 注意：所有的目录都不是必要的，在此示例中我们仅仅会用到 c(控制器) 这个目录来作介绍。
 
-接着，编写路由配置文件 `application/router.js` :
+接着，编写路由配置文件 `application/router.js`：
 ```js
 module.exports = app => {
   app.get('/',app.controller.home.index);
 }
 ```
-在这里，我们简单地将根路径指向 home 控制器对应的方法，输出一句问候语。
-在 c 目录下添加我们的控制器文件 `application/c/home.js`
+在这里，我们简单地将根路径指向 home 控制器对应的方法，输出一句问候语。在 c 目录下添加我们的控制器文件 `application/c/home.js`：
 ```js
 module.exports = app => {
 	class HomeController extends app.Controller {
@@ -98,15 +97,13 @@ module.exports = app => {
 }
 ```
 
-启动我们的应用
-`node index.js`
-访问 `http://localhost:91`，将看到浏览器输出 `hello, heysoo`
+启动我们的应用 `node index.js`，访问 `http://localhost:91`，将看到浏览器输出 `hello, heysoo`。
 
 
 ## 依赖说明
 Node
-> Heysoo 对 Node 版本最低要求是 7.6.0 +(为了使用最新的 async/await 特性)。
-如果你的 Node 版本比较低，可以考虑通过 babel 进行 polyfill。
+> Heysoo 对 Node 版本最低要求是 7.6.0 +（为了使用最新的 async/await 特性）。
+如果你的 Node 版本比较低，可以考虑通过 babel 进行 polyfill，参见 [如何 polyfill？](/FAQ?id=%E5%A6%82%E4%BD%95-polyfill%EF%BC%9F)。
 
 ## 特性
 ### ![](./imgs/icons/config.png) 可配置，可拆卸
