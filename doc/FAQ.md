@@ -21,12 +21,8 @@ npm i heysoo --save
 }
 ```
 
-### 3. 修改项目入口文件（index.js）
+### 3. 启动文件 `boot.js`
 ```js
-require('babel-core/register')({
-	ignore: /node_modules\/(?!heysoo)/, // 注意，这里是为了让 babel 编译 Heysoo 的代码
-});
-
 const Heysoo = require('heysoo');
 const app = new Heysoo();
 
@@ -35,6 +31,15 @@ app.use(async ctx => {
 });
 
 app.start();
+```
+
+### 4. 修改项目入口文件（index.js）
+```js
+require('babel-core/register')({
+	ignore: /node_modules\/(?!heysoo)/, // 注意，这里是为了让 babel 编译 Heysoo 的代码
+});
+
+require('./boot.js');
 ```
 
 OK 啦，现在启动你的应用看看。

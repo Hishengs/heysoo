@@ -24,22 +24,22 @@ app.start();
 ## 进一步配置
 首先介绍一下一个典型的 Heysoo 项目的目录结构：
 ```js
-- root
-  - app `// 主要应用目录`
-    - controller
-    - service
-    - view
-    - model
-    - static
-    - schedule
-    - router.js `// 全局路由配置`
-  - node_modules
-  - index.js `// 启动文件`
-  - config.js `// 项目配置文件`
-  - package.json
+—— root
+   ├── app `// 主要应用目录`
+   |   ├── controller
+   |   ├── service
+   |   ├── view
+   |   ├── model
+   |   ├── static
+   |   ├── schedule
+   |   ├── router.js `// 全局路由配置`
+   ├── node_modules
+   ├── index.js `// 启动文件`
+   ├── config.js `// 项目配置文件`
+   ├── package.json
 ```
 下面我们通过一步一步修改的方式完成以上所有功能的配置。
-首先，编写一个简单的配置文件 `config.js`
+首先，编写一个简单的配置文件 `config.js`：
 ```js
 module.exports = {
   host: 'localhost',
@@ -57,55 +57,55 @@ module.exports = {
 ```
 > 更详细的配置参见 [`配置`](./#/config) 模块。
 
-此时，我们的项目目录结构变成这样
+此时，我们的项目目录结构变成这样：
 ```js
-- root
-  - application
-    - c
-    - s
-    - v
-    - m
-    - p
-    - sc
-    - router.js
-  - node_modules
-  - index.js
-  - config.js
+── root
+   ├── application
+   |   ├── c
+   |   ├── s
+   |   ├── v
+   |   ├── m
+   |   ├── p
+   |   ├── sc
+   |   ├── router.js
+   ├── node_modules
+   ├── index.js
+   ├── config.js
 ```
 > 注意：所有的目录都不是必要的，在此示例中我们仅仅会用到 c(控制器) 这个目录来作介绍。
 
-接着，编写路由配置文件 `application/router.js` :
+接着，编写路由配置文件 `application/router.js`：
 ```js
 module.exports = app => {
   app.get('/',app.controller.home.index);
 }
 ```
-在这里，我们简单地将根路径指向 home 控制器对应的方法，输出一句问候语。
-在 c 目录下添加我们的控制器文件 `application/c/home.js`
+在这里，我们简单地将根路径指向 home 控制器对应的方法，输出一句问候语。在 c 目录下添加我们的控制器文件 `application/c/home.js`：
 ```js
 module.exports = app => {
-	class HomeController extends app.Controller {
+  class HomeController extends app.Controller {
 
-		constructor (){
-			super();
-		}
+    constructor (){
+      super();
+    }
 
-		index (){
-			this.ctx.body = 'hello, heysoo';
-		}
-	}
-	return new HomeController();
+    index (){
+      this.ctx.body = 'hello, heysoo';
+    }
+  }
+  return new HomeController();
 }
 ```
 
-启动我们的应用
-`node index.js`
-访问 `http://localhost:91`，将看到浏览器输出 `hello, heysoo`
+启动我们的应用 `node index.js`，访问 `http://localhost:91`，将看到浏览器输出 `hello, heysoo`。
 
 
 ## 依赖说明
-Heysoo 对 Node 版本最低要求是 7.6.0 +(为了使用最新的 async/await 特性)。
-如果你的 Node 版本比较低，可以考虑通过 babel 进行 polyfill。
+Node
+> Heysoo 对 Node 版本最低要求是 7.6.0 +（为了使用最新的 async/await 特性）。
+如果你的 Node 版本比较低，可以考虑通过 babel 进行 polyfill，参见 [如何 polyfill？](/FAQ?id=%E5%A6%82%E4%BD%95-polyfill%EF%BC%9F)。
+
+> Node 最新 LTS 版本已经到了 8.9.1，后端语言不像浏览器，建议尽可能升级到比较新的版本并拥抱新的语言特性。
 
 ## 特性
 ### ![](./doc/imgs/icons/config.png) 可配置，可拆卸
@@ -119,6 +119,3 @@ Heysoo 并不是一个重新造轮子的 MVC 框架，我们的目标是尽可�
 
 ### 拥抱 ES2015 和 async/await
 在 Node 环境下编写代码，我们没有理由不使用 ES2015，同时通过适当的配置(babel)我们就可以使用更加方便的 async/await 特性代替繁琐的 promise / generator / co 等。
-
-## 文档
-[详细文档说明](https://github.com/Hishengs/heysoo/tree/master/doc)

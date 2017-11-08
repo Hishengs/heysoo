@@ -4,6 +4,8 @@
 **注意** 以下大多数功能 Heysoo 并没有内置，因为我们希望框架本身尽可能地简单，只是举例说明如何将这些功能集成到框架中来，投入到你的实际项目使用中去。
 
 ## cookie
+**状态** <span class="badge badge-primary">done</span>
+
 使用 Koa 提供的 cookies API 就可以很方便地对 cookie 进行操作。详见 [Koa](http://koajs.com/#context) 文档。
 ```js
 ctx.cookies.get(name, [options]);
@@ -54,7 +56,7 @@ app.hook(app => {
 	app.context.http = http;
 });
 // 使用
-this.ctx.http.post(url,postData);
+this.ctx.http.post(url, postData);
 ```
 
 ## i18n
