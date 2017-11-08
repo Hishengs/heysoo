@@ -117,3 +117,6 @@ Heysoo 并不是一个重新造轮子的 MVC 框架，我们的目标是尽可�
 
 ### ![](./imgs/icons/plugin.png) 插件化
 你可以通过 Heysoo 提供的 `app.hook` 钩子功能来引入你自己实现的插件。例如如果你觉得 Heysoo 自带的数据库功能不是你想要的，你完全可以禁用它，之后引入你自己实现的数据库插件模块。
+
+### 拥抱 ES2015 和 async/await
+在 Node 环境下编写代码，我们没有理由不使用 ES2015，同时通过适当的配置(babel)我们就可以使用更加方便的 async/await 特性代替繁琐的 promise / generator / co 等。
