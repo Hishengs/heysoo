@@ -16,16 +16,16 @@
 在 `config.js` 中：
 ```js
 module.exports = {
-	database: {
-		enabled: true, 		 // 默认不开启数据库功能
-		orm: 'sequelize',  // 默认 sequelize，可选：sequelize, bookshelf
-		type: 'mysql', 		 // 数据库类型，支持的类型参照相应 ORM 库文档
-		host: 'localhost',
-		port: 3306,
-		username: 'root',
-		password: 'password',
-		dbname: 'heysoo',
-	},
+  database: {
+    enabled: true,      // 开启数据库功能
+    orm: 'sequelize',   // 默认 sequelize，可选：sequelize, bookshelf
+    type: 'mysql',      // 数据库类型，支持的类型参照相应 ORM 库文档
+    host: 'localhost',
+    port: 3306,
+    username: 'root',
+    password: 'password',
+    dbname: 'heysoo',
+  },
 }
 ```
 
@@ -41,29 +41,29 @@ module.exports = {
 ```js
 module.exports = (sequelize, DataTypes) => {
 
-	const userModel = sequelize.define('user',{
-		user_id: {
-			primaryKey: true,
-			type: DataTypes.INTEGER,
-			autoIncrement: true,
-		},
-		name: {
-			type: DataTypes.STRING,
-			allowNull: false,
-		},
-		email: {
-			type: DataTypes.STRING,
-			allowNull: false,
-		},
-		password: {
-			type: DataTypes.STRING,
-			allowNull: false,
-		},
-	},{
-		tableName: 'user'
-	});
+  const userModel = sequelize.define('user',{
+    user_id: {
+      primaryKey: true,
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+  },{
+    tableName: 'user'
+  });
 
-	return userModel;
+  return userModel;
 
 }
 ```
@@ -72,9 +72,9 @@ module.exports = (sequelize, DataTypes) => {
 在 `controller` 或者 `service` 方法中，可以以 `this.ctx.model.user` 的方式引用 model
 ```js
 this.ctx.model.user.findOne({
-	where: {
-		name: 'heysoo'
-	}
+  where: {
+    name: 'heysoo'
+  }
 });
 ```
 
@@ -93,11 +93,11 @@ this.ctx.model.user.findOne({
 ```js
 module.exports = bookshelf => {
 
-	const userModel = bookshelf.Model.extend({
-		tableName: 'user'
-	});
+  const userModel = bookshelf.Model.extend({
+    tableName: 'user'
+  });
 
-	return userModel;
+  return userModel;
 
 }
 ```

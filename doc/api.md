@@ -17,13 +17,13 @@ const app = new Heysoo();
 
 ### 属性
 
-#### app._version
+#### app.version
 当前版本
 
-#### app._author
+#### app.author
 作者
 
-#### app._config
+#### app.config
 当前配置
 
 ### 方法
@@ -242,7 +242,7 @@ this.ctx.withHeader({
 ## logger
 > 日志相关 API
 
-## util
+<!-- ## util
 > 辅助工具 API
 
 ### toFixed
@@ -255,4 +255,4 @@ console.log((12.3456).toFixed(2));
 **输出**
 ```js
 12.35
-```
+``` -->
