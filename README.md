@@ -25,17 +25,17 @@ app.start();
 首先介绍一下一个典型的 Heysoo 项目的目录结构：
 ```js
 —— root
-   ├── app `// 主要应用目录`
+   ├── app              // 主要应用目录
    |   ├── controller
    |   ├── service
    |   ├── view
    |   ├── model
    |   ├── static
    |   ├── schedule
-   |   ├── router.js `// 全局路由配置`
+   |   ├── router.js    // 全局路由配置
    ├── node_modules
-   ├── index.js `// 启动文件`
-   ├── config.js `// 项目配置文件`
+   ├── index.js         // 启动文件
+   ├── config.js        // 项目配置文件
    ├── package.json
 ```
 下面我们通过一步一步修改的方式完成以上所有功能的配置。
@@ -55,7 +55,7 @@ module.exports = {
   }
 }
 ```
-> 更详细的配置参见 [`配置`](./#/config) 模块。
+> 更详细的配置参见 [`配置`](http://www.hisheng.net/works/heysoo/doc/index.html#/config) 模块。
 
 此时，我们的项目目录结构变成这样：
 ```js
@@ -93,7 +93,7 @@ module.exports = app => {
       this.ctx.body = 'hello, heysoo';
     }
   }
-  return new HomeController();
+  return HomeController();
 }
 ```
 
@@ -103,19 +103,23 @@ module.exports = app => {
 ## 依赖说明
 Node
 > Heysoo 对 Node 版本最低要求是 7.6.0 +（为了使用最新的 async/await 特性）。
-如果你的 Node 版本比较低，可以考虑通过 babel 进行 polyfill，参见 [如何 polyfill？](/FAQ?id=%E5%A6%82%E4%BD%95-polyfill%EF%BC%9F)。
+如果你的 Node 版本比较低，可以考虑通过 babel 进行 polyfill，参见 [如何 polyfill？](http://www.hisheng.net/works/heysoo/doc/index.html#/FAQ?id=%E5%A6%82%E4%BD%95-polyfill%EF%BC%9F)。
 
-> Node 最新 LTS 版本已经到了 8.9.1，后端语言不像浏览器，建议尽可能升级到比较新的版本并拥抱新的语言特性。
+> Node 最新 LTS 版本已经到了 8.9.4，后端语言不像浏览器，建议尽可能升级到比较新的版本并拥抱新的语言特性。
 
 ## 特性
-### ![](./doc/imgs/icons/config.png) 可配置，可拆卸
+### ![](http://www.hisheng.net/works/heysoo/doc/imgs/icons/config.png) 可配置，可拆卸
 Heysoo 最大的特点是所有的功能模块几乎都可以配置，可拆卸，是否使用可以完全由你自己决定，不需要的功能模块在应用启动时并不会加载。假设你将所有的功能模块禁用，那它就只是一个简单的增强版的 Koa，仅此而已。
 
-### ![](./doc/imgs/icons/giant.png) 站在巨人的肩膀上
+### ![](http://www.hisheng.net/works/heysoo/doc/imgs/icons/giant.png) 站在巨人的肩膀上
 Heysoo 并不是一个重新造轮子的 MVC 框架，我们的目标是尽可能地使用优秀的开源库来实现我们想要的功能。Heysoo 的基础功能是基于 Koa 实现的，在其基础上进行功能增强，而所有的这些功能都是可以拆卸的。
 
-### ![](./doc/imgs/icons/plugin.png) 插件化
+### ![](http://www.hisheng.net/works/heysoo/doc/imgs/icons/plugin.png) 插件化
 你可以通过 Heysoo 提供的 `app.hook` 钩子功能来引入你自己实现的插件。例如如果你觉得 Heysoo 自带的数据库功能不是你想要的，你完全可以禁用它，之后引入你自己实现的数据库插件模块。
 
-### ![](./doc/imgs/icons/future.png) 拥抱 ES2015 和 async/await
+### ![](http://www.hisheng.net/works/heysoo/doc/imgs/icons/future.png) 拥抱 ES2015 和 async/await
 在 Node 环境下编写代码，我们没有理由不使用 ES2015，同时通过适当的配置(babel)我们就可以使用更加方便的 async/await 特性代替繁琐的 promise / generator / co 等。
+
+
+## 详细文档
+更详细的文档说明见: [Heysoo](http://www.hisheng.net/works/heysoo)
