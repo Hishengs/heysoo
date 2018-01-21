@@ -1,3 +1,2 @@
 cls
-set DEBUG=Heysoo:*,-not_this
-supervisor index.js
+supervisor --quiet index.js

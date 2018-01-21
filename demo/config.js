@@ -1,4 +1,5 @@
 module.exports = {
+  debugFlag: 'Hisheng',
   host: 'localhost',
   port: 8001,
   folder: {
