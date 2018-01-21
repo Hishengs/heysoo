@@ -9,7 +9,8 @@ module.exports = (app) => {
       // await this.ctx.render('index.html');
       // console.log(this.ctx.controller.user);
       // this.ctx.withStatus(200);
-      await this.ctx.controller.user.index();
+      // await this.ctx.controller.user.index();
+      this.ctx.service.data.test();
     }
 
     van() {

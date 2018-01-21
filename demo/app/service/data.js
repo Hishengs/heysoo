@@ -10,6 +10,10 @@ module.exports = (app) => {
       return this.onlineUserNum;
     }
 
+    test (){
+      this.ctx.send('this is a test from DataService');
+    }
+
   }
   return DataService;
 };
