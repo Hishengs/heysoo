@@ -30,5 +30,5 @@ module.exports = {
     password: '8355189',
     dbname: 'gumi',
   },
-  logRequestTime: true
+  logRequestTime: false
 };

@@ -10,7 +10,8 @@ module.exports = (app) => {
       // console.log(this.ctx.controller.user);
       // this.ctx.withStatus(200);
       // await this.ctx.controller.user.index();
-      this.ctx.service.data.test();
+      // this.ctx.service.data.test();
+      this.ctx.send('Hello World!');
     }
 
     van() {

@@ -7,7 +7,8 @@
     "ava": "ava --verbose",
     "mocha": "mocha --watch",
     "eslint": "eslint lib/*",
-    "doc": "docute doc -w -p 72"
+    "doc": "docute doc -w -p 72",
+    "ab": "ab -n 1000 -t 100 http://127.0.0.1:8001/"
   },
   "author": "Hisheng",
   "license": "MIT",
