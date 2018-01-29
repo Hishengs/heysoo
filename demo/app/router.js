@@ -59,20 +59,78 @@ module.exports = (app) => {
   //   this.ctx.send(sentence);
   // });
   // app.router.get('/', app.controller.home.index);
-  // test callback
+
+  app.router.get('/home', 'home.index');
+
+  // ===== test callback =====
   app.router.all('/', function(){
-    this.ctx.send('hi, man');
+    this.ctx.send('[router test] callback');
   });
-  // test controller
-  app.router.get('home', '/home', 'home.index').get(/ab?cd/, async function(){
-    // this.ctx.body = 'ab?cd';
-    console.log(this.ctx.app.router.allowedMethods());
-    this.ctx.body = 'xx';
+
+  // ===== test controller =====
+  app.router.get('/controller', 'router.controller');
+
+  // ===== test route name =====
+  app.router.get('router', '/router-name', 'router.routeName');
+
+  // ===== test chain use =====
+  app.router.get('/xxx', function(){
+    this.ctx.send('[router test] chain xxx');
+  }).get('/yyy', function(){
+    this.ctx.send('[router test] chain yyy');
   });
-  // test regx
-  // app.router.get(/ab?cd/, async function(){
-  //   this.ctx.body = 'ab?cd';
-  // });
-  // test redirect
-  app.router.redirect('/a', '/', 404);
+
+  // ===== test regx =====
+  app.router.get(/ab?cd/, function(){
+    this.ctx.body = 'ab?cd';
+  });
+
+  // ===== test redirect =====
+  app.router.get('/redirect-to', 'router.redirect');
+  app.router.redirect('/redirect', '/redirect-to', 404);
+
+  // ===== test view =====
+  app.router.view('/home.index', 'index');
+
+  // ===== test router group =====
+  // 1. prefix
+  app.router.group({
+    prefix: '/user'
+  }, (router) => {
+    router.get('/', function(){
+      this.ctx.send('[router test] group.prefix /user/');
+    });
+    router.get('/simon', function(){
+      this.ctx.send('[router test] group.prefix /user/simon');
+    });
+  });
+  // 2. controller
+  app.router.group({
+    controller: 'router'
+  }, (router) => {
+    router.get('/group-controller', 'group');
+  });
+  // 3. mixin
+  app.router.group({
+    controller: 'router',
+    prefix: '/router',
+  }, (router) => {
+    router.get('/group-mixin-a', 'groupMixinA');
+    router.get('/group-mixin-b', 'groupMixinB');
+  });
+
+  // ===== test API:getUrl =====
+  app.router.get('/api/get-url', function(){
+    this.ctx.send(this.ctx.router.getRouteUrl('router'));
+  });
+
+  // ===== test API:currentRoute =====
+  app.router.get('/api/current-route', function(){
+    this.ctx.send(this.ctx.router.currentRoute());
+  });
+
+  // ===== test API:getUrl =====
+  app.router.get('/api/current-route-name', function(){
+    this.ctx.send(this.ctx.router.currentRouteName());
+  });
 };

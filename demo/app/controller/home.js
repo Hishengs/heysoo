@@ -13,9 +13,8 @@ module.exports = (app) => {
       // this.ctx.service.data.test();
       // this.ctx.send('Hello World!');
       // this.ctx.send(this.ctx._csrf);
-      const xxx = this.xxx || 'xxx';
-      this.xxx = 'yyy';
-      this.ctx.send(xxx);
+      // this.ctx.send('xxx');
+      await this.ctx.display('index');
     }
 
     van() {
