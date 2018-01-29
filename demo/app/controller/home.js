@@ -11,7 +11,11 @@ module.exports = (app) => {
       // this.ctx.withStatus(200);
       // await this.ctx.controller.user.index();
       // this.ctx.service.data.test();
-      this.ctx.send('Hello World!');
+      // this.ctx.send('Hello World!');
+      // this.ctx.send(this.ctx._csrf);
+      const xxx = this.xxx || 'xxx';
+      this.xxx = 'yyy';
+      this.ctx.send(xxx);
     }
 
     van() {

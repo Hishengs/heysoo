@@ -2,15 +2,6 @@ module.exports = {
   debugFlag: 'Hisheng',
   host: 'localhost',
   port: 8001,
-  folder: {
-    app: 'app',
-    controller: 'controller',
-    service: 'service',
-    model: 'model',
-    view: 'view',
-    static: 'public',
-    schedule: 'schedule'
-  },
   view: {
     enabled: true,
     engine: 'nunjucks',
@@ -29,6 +20,16 @@ module.exports = {
     username: 'root',
     password: '8355189',
     dbname: 'gumi',
+  },
+  csrf: {
+    enabled: true,
+  },
+  middleware: {
+    enabled: true,
+    use: ['mw1'],
+    options: {
+      tag: 'kfc'
+    },
   },
   logRequestTime: false
 };
