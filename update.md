@@ -2,7 +2,7 @@
 
 ### 0.0.6
 #### features
-[x] add support for multi static server
+- [x] add support for multi static server
 ```js
 // single static server
 {
@@ -27,4 +27,4 @@
 ```
 
 #### improve
-[x] improve code quality
+- [x] improve code quality
