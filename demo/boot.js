@@ -42,5 +42,5 @@ app.afterStart(async (app) => {
 });*/
 
 app.start(() => {
-  console.log('server is start');
+  app.console.info('server is start');
 });

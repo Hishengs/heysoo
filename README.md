@@ -123,3 +123,9 @@ Heysoo 并不是一个重新造轮子的 MVC 框架，我们的目标是尽可�
 
 ## 详细文档
 更详细的文档说明见: [Heysoo](http://www.hisheng.net/works/heysoo)
+
+## TODO
+[ ] CSRF 验证
+[ ] session 插件
+[ ] mock 插件
+[ ] HTTP Client 插件

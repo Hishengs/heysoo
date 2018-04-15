@@ -22,7 +22,6 @@
     "koa-router": "^7.3.0",
     "koa-session": "^5.8.1",
     "koa-static": "^4.0.2",
-    "lodash": "^4.17.4",
     "node-schedule": "^1.2.4"
   },
   "repository": {
