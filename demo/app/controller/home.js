@@ -14,7 +14,9 @@ module.exports = (app) => {
       // this.ctx.send('Hello World!');
       // this.ctx.send(this.ctx._csrf);
       // this.ctx.send('xxx');
-      await this.ctx.display('index');
+      await this.ctx.display('index', {
+        name: 'Hisheng',
+      });
     }
 
     van() {
