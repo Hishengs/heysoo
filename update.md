@@ -27,4 +27,8 @@
 ```
 
 #### improve
-- [x] improve code quality
+- [x] improve code quality, faster start up speed.
+
+
+#### fix
+- [x] app start failed if no config/router file spicified.
