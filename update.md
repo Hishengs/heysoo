@@ -32,3 +32,11 @@
 
 #### fix
 - [x] app start failed if no config/router file spicified.
+
+
+### 0.0.7
+#### features
+- [x] add support for schedule
+
+#### fix
+- [x] require error if not enable koa-views

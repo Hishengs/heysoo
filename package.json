@@ -1,6 +1,6 @@
 {
   "name": "heysoo",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A future node web app base on Koa",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,8 @@
     "koa-router": "^7.4.0",
     "koa-session": "^5.8.1",
     "koa-static": "^5.0.0",
-    "node-schedule": "^1.3.0"
+    "koa-views": "^6.1.4",
+    "nunjucks": "^3.1.3"
   },
   "repository": {
     "type": "git",
@@ -42,10 +43,9 @@
     "eslint-config-bitpower": "0.0.1",
     "eslint-plugin-import": "^2.7.0",
     "knex": "^0.13.0",
-    "koa-views": "^6.1.4",
     "mocha": "^3.5.3",
     "mysql2": "^1.4.2",
-    "nunjucks": "^3.0.1",
+    "node-schedule": "^1.3.0",
     "sequelize": "^4.2.0"
   }
 }
