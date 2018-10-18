@@ -1,6 +1,6 @@
 ## 介绍
 
-Heysoo 是一个底层基于 [Koa](http://koajs.com) 进行开发的轻量级 MVC 框架。它内置了一个 MVC 框架所需的元素，包括模型(M)、视图层(V)、控制器(C)，以及路由，静态资源等等。在 Heysoo 框架中，我们通过配置来加载我们需要的功能，实现可插拔式的应用。我们相信，通过良好的配置及约定，能够构建出稳定有序的服务。
+Heysoo 是一个底层基于 [Koa](http://koajs.com) 进行开发的轻量级 MVC 框架。它内置了一个 MVC 框架所需的元素，包括模型(M)、视图(V)、控制器(C)，以及路由，静态资源等等。在 Heysoo 框架中，我们通过配置来加载我们需要的功能，实现可插拔式的应用。我们相信，通过良好的配置及约定，能够构建出稳定有序的服务。
 
 ## 安装
 ```bash
@@ -13,7 +13,7 @@ npm install heysoo --save
 const Heysoo = require('heysoo');
 const app = new Heysoo();
 
-app.use(async ctx => {
+app.use(ctx => {
   ctx.body = 'hello, world.';
 });
 
@@ -103,28 +103,28 @@ Node
 > Heysoo 对 Node 版本最低要求是 7.6.0 +（为了使用最新的 async/await 特性）。
 如果你的 Node 版本比较低，可以考虑通过 babel 进行 polyfill，参见 [如何 polyfill？](http://www.hisheng.net/works/heysoo/doc/index.html#/FAQ?id=%E5%A6%82%E4%BD%95-polyfill%EF%BC%9F)。
 
-> Node 最新 LTS 版本已经到了 8.11.1，后端语言不像浏览器，建议尽可能升级到比较新的版本并拥抱新的语言特性。
+> Node 最新 LTS 版本已经到了 8.12.0，后端语言不像浏览器，建议尽可能升级到比较新的版本并拥抱新的语言特性。
 
 ## 特性
-### ![](http://www.hisheng.net/works/heysoo/doc/imgs/icons/config.png) 可配置，可拆卸
+#### ![](http://www.hisheng.net/works/heysoo/doc/imgs/icons/config.png) 可配置，可拆卸
 Heysoo 最大的特点是所有的功能模块几乎都可以配置，可拆卸，是否使用可以完全由你自己决定，不需要的功能模块在应用启动时并不会加载。假设你将所有的功能模块禁用，那它就只是一个简单的增强版的 Koa，仅此而已。
 
-### ![](http://www.hisheng.net/works/heysoo/doc/imgs/icons/giant.png) 站在巨人的肩膀上
+#### ![](http://www.hisheng.net/works/heysoo/doc/imgs/icons/giant.png) 站在巨人的肩膀上
 Heysoo 并不是一个重新造轮子的 MVC 框架，我们的目标是尽可能地使用优秀的开源库来实现我们想要的功能。Heysoo 的基础功能是基于 Koa 实现的，在其基础上进行功能增强，而所有的这些功能都是可以拆卸的。
 
-### ![](http://www.hisheng.net/works/heysoo/doc/imgs/icons/plugin.png) 插件化
+#### ![](http://www.hisheng.net/works/heysoo/doc/imgs/icons/plugin.png) 插件化
 你可以通过 Heysoo 提供的插件机制来引入你自己实现的插件。例如如果你觉得 Heysoo 自带的数据库功能不是你想要的，你完全可以禁用它，之后引入你自己实现的数据库插件模块。
 
-### ![](http://www.hisheng.net/works/heysoo/doc/imgs/icons/future.png) 拥抱 ES2015 和 async/await
-在 Node 环境下编写代码，我们没有理由不使用 ES2015，同时通过适当的配置(babel)我们就可以使用更加方便的 async/await 特性代替繁琐的 promise / generator / co 等。
+#### ![](http://www.hisheng.net/works/heysoo/doc/imgs/icons/future.png) 拥抱 ES2015 和 async/await
+在 Node 环境下编写代码，我们没有理由不使用 ES2015+，同时通过适当的配置（babel）我们就可以使用更加方便的 async/await 特性代替繁琐的 promise / generator / co 等。
 
 
 ## 详细文档
-更详细的文档说明见: [Heysoo](http://www.hisheng.net/works/heysoo)
+更详细的文档说明见： [Heysoo](http://www.hisheng.net/works/heysoo)
 
-## TODO
+<!-- ## TODO
 - [ ] CSRF 验证
 - [ ] Session 插件
 - [ ] Mock 插件
 - [ ] HTTP Client 插件
-- [ ] Master/Worker 模式
+- [ ] Master/Worker 模式 -->
