@@ -13,5 +13,6 @@ module.exports = {
     "no-unneeded-ternary": "off",
     "class-methods-use-this": "off",
     "consistent-return": "warn",
-  },
+    "no-param-reassign": "off"
+  }
 };
