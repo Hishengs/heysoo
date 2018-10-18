@@ -9,7 +9,7 @@
     "eslint": "eslint lib/*",
     "doc": "docute doc -w -p 72",
     "ab": "ab -n 1000 -t 100 http://127.0.0.1:8001/",
-    "test-router": "mocha test/router.js"
+    "test-router": "mocha test/router.js --delay"
   },
   "author": "Hisheng",
   "license": "MIT",
