@@ -8,7 +8,8 @@
     "mocha": "mocha --watch",
     "eslint": "eslint lib/*",
     "doc": "docute doc -w -p 72",
-    "ab": "ab -n 1000 -t 100 http://127.0.0.1:8001/"
+    "ab": "ab -n 1000 -t 100 http://127.0.0.1:8001/",
+    "test-router": "mocha test/router.js"
   },
   "author": "Hisheng",
   "license": "MIT",
@@ -38,7 +39,8 @@
     "mocha": "^5.2.0",
     "mysql2": "^1.6.1",
     "node-schedule": "^1.3.0",
-    "sequelize": "^4.39.1"
+    "sequelize": "^4.39.1",
+    "supertest": "^3.3.0"
   },
   "repository": {
     "type": "git",
