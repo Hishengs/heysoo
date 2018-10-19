@@ -9,11 +9,11 @@ module.exports = {
   },
   static: {
     enabled: true,
-    path: '/static', // 路径
-    map: {
-      '/static1': 'static',
+    path: '/public', // 路径
+    /* path: {
+      '/static': 'static',
       '/static2': 'static2',
-    },
+    }, */
   },
   database: {
     enabled: false,

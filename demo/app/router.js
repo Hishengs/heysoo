@@ -63,8 +63,8 @@ module.exports = (app) => {
   app.router.get('/home', 'home.index');
 
   // ===== test callback =====
-  app.router.all('/', function(){
-    this.ctx.send('[router test] callback');
+  app.router.all('/', function() {
+    this.ctx.send('hello world ' + this.ctx.csrf);
   });
 
   // ===== test controller =====
