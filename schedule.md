@@ -1,0 +1,6 @@
+- [x] 内置 csrf 支持
+- [ ] 提供内置工具函数模块 util
+- [ ] session 支持
+- [ ] 日志 logger 模块
+- [ ] 集成数据验证与 mock 模块： blind-mock
+- [ ] 添加 API: ctx.jsonp()
