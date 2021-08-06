@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "mocha": "mocha test/router.js && mocha test/static.js",
-    "eslint": "eslint lib/* --fix",
+    "eslint": "eslint lib/*",
     "doc": "docute doc -w -p 72",
     "ab": "ab -n 1000 -t 100 http://127.0.0.1:8002/",
     "test-router": "mocha test/router.js --delay"
@@ -33,8 +33,7 @@
     "ava": "^3.15.0",
     "chai": "^4.3.4",
     "eslint": "^7.32.0",
-    "eslint-config-bitpower": "0.0.9",
-    "eslint-plugin-import": "^2.23.0",
+    "eslint-config-airbnb-base": "^14.2.1",
     "mocha": "^9.0.3",
     "supertest": "^6.1.4"
   },
