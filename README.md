@@ -2,6 +2,11 @@
 
 Heysoo 是一个底层基于 [Koa](http://koajs.com) 进行开发的轻量级 MVC 框架。它内置了一个 MVC 框架所需的元素，包括模型(M)、视图(V)、控制器(C)，以及路由，静态资源等等。在 Heysoo 框架中，我们通过配置来加载我们需要的功能，实现可插拔式的应用。我们相信，通过良好的配置及约定，能够构建出稳定有序的服务。
 
+[![npm][npm-image]][npm-url]
+
+[npm-image]: https://badge.fury.io/js/heysoo.svg
+[npm-url]: https://www.npmjs.com/package/heysoo
+
 ## 安装
 ```bash
 npm install heysoo --save

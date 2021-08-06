@@ -8,8 +8,8 @@ module.exports = (app) => {
 
   class IndexController extends app.Controller {
 
-    async index() {
-      await sleep(0);
+    /* async  */index() {
+      // await sleep(0);
       this.ctx.send('Hello World!');
     }
 

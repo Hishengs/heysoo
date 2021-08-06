@@ -7,6 +7,6 @@ const app = new Heysoo();
 // });
 
 app.start(() => {
-  app.schedule.sc1.run();
+  // app.schedule.sc1.run();
   app.console.info('server is start');
 });

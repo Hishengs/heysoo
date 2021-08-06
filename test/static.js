@@ -6,33 +6,19 @@ const { expect } = chai;
 
 const app = new Heysoo();
 
-// start app and test cases
-app.start().then(server => {
-  setTimeout(() => {
-    runCases(server);
-  }, 200);
-});
+/* global describe, it, run */
+describe('Static Test', () => {
+  let agent;
 
-function runCases (server) {
-  const agent = request(server);
-
-  /* global describe, it, run */
-  describe('Static Test', () => {
-
-    it('app instance of Heysoo', () => {
-      expect(app instanceof Heysoo).to.be.true;
+  before((done) => {
+    // start app and test cases
+    app.start().then(server => {
+      agent = request(server);
+      done();
     });
-
-    // test regx
-    describe('test regx', () => {
-      it('/ab?cd => /acd', (done) => {
-        agent
-          .get('/acd')
-          .expect(200, done);
-      });
-    });
-
   });
 
-  run();
-}
+  it('app instance of Heysoo', () => {
+    expect(app instanceof Heysoo).to.be.true;
+  });
+});

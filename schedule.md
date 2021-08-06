@@ -4,3 +4,11 @@
 - [ ] 日志 logger 模块
 - [ ] 集成数据验证与 mock 模块： blind-mock
 - [ ] 添加 API: ctx.jsonp()
+
+### 一些优秀的框架
+1. koa.js https://github.com/koajs/koa
+2. express.js https://github.com/expressjs/express
+3. hapi.js https://github.com/hapijs/hapi
+4. sails.js https://github.com/balderdashy/sails
+5. fastify.js https://github.com/fastify/fastify
+6. think.js https://github.com/thinkjs/thinkjs

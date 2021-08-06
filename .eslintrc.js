@@ -3,7 +3,7 @@ module.exports = {
   "rules": {
     "space-before-function-paren": "off",
     "no-restricted-syntax": "off",
-    "no-await-in-loop": "warn",
+    "no-await-in-loop": "off",
     "import/newline-after-import": "warn",
     "no-unused-vars": "warn",
     "import/no-extraneous-dependencies": "warn",
@@ -13,6 +13,7 @@ module.exports = {
     "no-unneeded-ternary": "off",
     "class-methods-use-this": "off",
     "consistent-return": "warn",
-    "no-param-reassign": "off"
+    "no-param-reassign": "off",
+    "global-require": "off"
   }
 };

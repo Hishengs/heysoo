@@ -35,78 +35,74 @@ app.router.get('/redirect/b', function() {
 });
 app.router.redirect('/redirect/a', '/redirect/b');
 
-// start app and test cases
-app.start().then(server => {
-  setTimeout(() => {
-    runCases(server);
-  }, 200);
-});
 
-function runCases (server) {
-  const agent = request(server);
+/* global describe, it, run */
+describe('Router Test', () => {
+  let agent;
 
-  /* global describe, it, run */
-  describe('Router Test', () => {
-
-    it('app instance of Heysoo', () => {
-      expect(app instanceof Heysoo).to.be.true;
+  before(function (done) {
+    // start app and test cases
+    app.start().then(server => {
+      agent = request(server);
+      done();
     });
-
-    describe('test methods', () => {
-      supportedMethods.forEach(method => {
-        it(`test ${method}`, (done) => {
-          agent[method.toLocaleLowerCase()]('/')
-            .expect(200)
-            .expect(method, done);
-        });
-      });
-    });
-
-    // test regx
-    describe('test regx', () => {
-      it('/ab?cd => /acd', (done) => {
-        agent
-          .get('/acd')
-          .expect(200, done);
-      });
-    });
-
-    // test params
-    describe('test params', () => {
-      it('/params:name', (done) => {
-        agent
-          .get('/params/hisheng')
-          .expect(200)
-          .expect('hisheng', done);
-      });
-    });
-
-    // test redirect
-    describe('test redirect', () => {
-      it('/redirect/a => /redirect/b', (done) => {
-        agent
-          .get('/redirect/a')
-          .expect(302, done);
-      });
-    });
-
-    // test groups
-    describe('test groups', () => {
-      it('/user/name', (done) => {
-        agent
-          .get('/user/name')
-          .expect(200)
-          .expect('heysoo', done);
-      });
-      it('/user/age', (done) => {
-        agent
-          .get('/user/age')
-          .expect(200)
-          .expect('21', done);
-      });
-    });
-
   });
 
-  run();
-}
+  it('app instance of Heysoo', () => {
+    expect(app instanceof Heysoo).to.be.true;
+  });
+
+  describe('test methods', () => {
+    supportedMethods.forEach(method => {
+      it(`test ${method}`, (done) => {
+        agent[method.toLocaleLowerCase()]('/')
+          .expect(200)
+          .expect(method, done);
+      });
+    });
+  });
+
+  // test regx
+  describe('test regx', () => {
+    it('/ab?cd => /acd', (done) => {
+      agent
+        .get('/acd')
+        .expect(200, done);
+    });
+  });
+
+  // test params
+  describe('test params', () => {
+    it('/params:name', (done) => {
+      agent
+        .get('/params/hisheng')
+        .expect(200)
+        .expect('hisheng', done);
+    });
+  });
+
+  // test redirect
+  describe('test redirect', () => {
+    it('/redirect/a => /redirect/b', (done) => {
+      agent
+        .get('/redirect/a')
+        .expect(302, done);
+    });
+  });
+
+  // test groups
+  describe('test groups', () => {
+    it('/user/name', (done) => {
+      agent
+        .get('/user/name')
+        .expect(200)
+        .expect('heysoo', done);
+    });
+    it('/user/age', (done) => {
+      agent
+        .get('/user/age')
+        .expect(200)
+        .expect('21', done);
+    });
+  });
+});
