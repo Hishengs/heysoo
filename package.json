@@ -13,7 +13,7 @@
   "author": "Hisheng",
   "license": "MIT",
   "dependencies": {
-    "bookshelf": "^0.13.3",
+    "bookshelf": "^1.2.0",
     "chalk": "^4.1.2",
     "delegates": "^1.0.0",
     "knex": "^0.95.9",
