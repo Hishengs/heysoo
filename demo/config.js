@@ -1,39 +1,20 @@
 module.exports = {
-  debugFlag: 'Hisheng',
-  host: 'localhost',
-  port: 8001,
-  view: {
-    enabled: true,
-    engine: 'nunjucks',
-    manual: true
+  heysoo: {
+    port: 7001,
   },
-  static: {
-    enabled: true,
-    path: '/public', // 路径
-    /* path: {
-      '/static': 'static',
-      '/static2': 'static2',
-    }, */
+  heysoo_cluster: {
+    port: 7002,
   },
-  database: {
-    enabled: false,
-    orm: 'sequelize',
-    type: 'mysql',
-    host: 'localhost',
-    port: 3306,
-    username: 'root',
-    password: '8355189',
-    dbname: 'gumi',
+  koa: {
+    port: 7003,
   },
-  csrf: {
-    enabled: true,
+  express: {
+    port: 7004,
   },
-  middleware: {
-    enabled: true,
-    use: ['mw1'],
-    options: {
-      tag: 'kfc'
-    },
+  egg: {
+    port: 7005,
   },
-  logRequestTime: false
+  nest_fastify: {
+    port: 7006,
+  }
 };

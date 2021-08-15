@@ -1,2 +1,5 @@
 .DS_Store
 /node_modules
+demo/express/node_modules
+demo/egg/node_modules
+demo/nest/node_modules

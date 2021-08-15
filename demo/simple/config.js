@@ -1,9 +1,7 @@
+const config = require('../config');
+
 module.exports = {
   debugFlag: 'Hisheng',
-  // host: 'localhost',
-  port: 8002,
+  port: config.heysoo.port,
   logRequestTime: false,
-  // schedule: {
-  //   enabled: true,
-  // },
 };

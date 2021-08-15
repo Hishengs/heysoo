@@ -2,8 +2,8 @@
 - [ ] 提供内置工具函数模块 util
 - [ ] session 支持
 - [ ] 日志 logger 模块
-- [ ] 集成数据验证与 mock 模块： blind-mock
 - [ ] 添加 API: ctx.jsonp()
+- [ ] 国际化
 
 ### 一些优秀的框架
 1. koa.js https://github.com/koajs/koa
@@ -12,3 +12,5 @@
 4. sails.js https://github.com/balderdashy/sails
 5. fastify.js https://github.com/fastify/fastify
 6. think.js https://github.com/thinkjs/thinkjs
+7. nest.js https://nestjs.com/
+8. egg.js https://eggjs.org/
