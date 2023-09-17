@@ -1,6 +1,6 @@
 # egg-demo
 
-egg demo
+eggjs demo
 
 ## QuickStart
 

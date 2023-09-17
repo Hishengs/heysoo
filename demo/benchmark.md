@@ -1,18 +1,23 @@
 # benchmark
 
-## 2021-08-15
+Ref: https://github.com/fastify/benchmarks
 
-> win7, RAM 16G, CPU: Intel-Core-i5-10400F
+## 2023-09-17
 
-> node-v14.15.0, npm-v6.14.8
+- Machine: win7, RAM 16G, CPU: Intel-Core-i5-10400F
 
-> simple hello world
+- Node: `v18.17.1`
 
-framework | req per sec
---- | ---
-koa | 2580.20/s
-heysoo | 2487.11/s
-heysoo(cluster) | 2518.01/s
-egg | 2246.51/s
-express | 2181.27/s
-nest(fastify) | 2555.48/s
+- App: simple hello world
+
+- Method: autocannon -c 100 -d 40 -p 10 localhost:3000
+
+framework | Version | Requests/s | Latency (ms) | Throughput/Mb
+--- | --- | --- | --- | ---
+node | 18.17.1 | 52488 | 18.56 ms | 7.09 MB
+nest(fastify) | 10.0.0 | 45350.4 | 21.55 ms | 8.03 MB
+koa | 2.14.2 | 42091.2 | 23.26 ms | 7.37 MB
+heysoo | 0.0.8 | 34316.6 | 28.64 ms | 6.04 MB
+egg | 3.17.4 | 26814.4 | 36.75 ms | 9.92 MB
+express | 4.18.2 | 8829.5 | 112.63 ms | 2.11 MB
+nest(express) | 10.0.0 | 8787.46 | 113.19 ms | 2.1 MB
