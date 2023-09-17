@@ -4,3 +4,5 @@ demo/express/node_modules
 demo/egg/node_modules
 demo/nest/dist
 demo/nest/node_modules
+dist
+**/.vitepress/cache

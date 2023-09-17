@@ -35,7 +35,6 @@ app.router.get('/redirect/b', function() {
 });
 app.router.redirect('/redirect/a', '/redirect/b');
 
-
 /* global describe, it, run */
 describe('Router Test', () => {
   let agent;

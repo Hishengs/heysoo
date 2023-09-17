@@ -1,13 +1,13 @@
 module.exports = {
-  "extends": "airbnb-base",
-  "rules": {
+  extends: "airbnb-base",
+  rules: {
     // 强制使用2个空格
-    "indent": ["error", 2, {
-      "SwitchCase": 1,
+    indent: ["error", 2, {
+      SwitchCase: 1,
     }],
     // 不允许使用 tab
     "no-tabs": "warn",
-    "strict": ["error", "safe"],
+    strict: ["error", "safe"],
     // 要求块作用域花括号前后必须有空行
     "padded-blocks": "off",
     // 不允许下划线开头的命名方式
@@ -21,31 +21,31 @@ module.exports = {
     // 推荐使用字符串模板代替普通字符串变量连接
     "prefer-template": "off",
     // 要求在全局作用域进行 require
-    "global-require": "warn",
+    "global-require": "off",
     // 强制即使是单行逻辑也使用花括号
-    "curly": "off",
+    curly: "off",
     // 不允许使用递增运算符
     "no-plusplus": "off",
     // 要求块作用域花括号前有空格
     "space-before-blocks": "warn",
     // 限制单行代码最大长度
     "max-len": ["warn", {
-      "code": 150,
-      "ignoreComments": true,
+      code: 150,
+      ignoreComments: true,
     }],
     // 属性冒号前后是否留空格
     "key-spacing": ["warn", {
-      "beforeColon": false,
-      "afterColon": true,
+      beforeColon: false,
+      afterColon: true,
     }],
     // 要求注释前有空格
     "spaced-comment": "off",
     // 声明前提前使用变量
     "no-use-before-define": ["warn", {
-      "functions": false,
+      functions: false,
     }],
     // 禁止对函数参数重赋值
-    "no-param-reassign": "warn",
+    "no-param-reassign": "off",
     // 要求匿名函数也要有名称
     "func-names": "off",
     // 函数、判断语句等之后第一个花括号位置风格
@@ -53,10 +53,10 @@ module.exports = {
     // 换行风格：\n(Linux) 或者 \r\n(windows)
     "linebreak-style": "off",
     // 强制使用单引号或者双引号
-    "quotes": "off",
+    quotes: "off",
     "no-restricted-properties": "warn",
     // 强制使用严格相等(===)代替宽松相等(==)
-    "eqeqeq": "warn",
+    eqeqeq: "warn",
     // 不允许定义未使用的函数参数
     "no-unused-vars": "warn",
     // 最后一个 import 后必须跟一个空行
@@ -68,7 +68,7 @@ module.exports = {
     // 不允许动态 require
     "import/no-dynamic-require": "off",
     // 优先使用 export default
-    'import/prefer-default-export' : 'off',
+    'import/prefer-default-export': 'off',
     // 函数参数括号前有空格
     "space-before-function-paren": "off",
     // 箭头函数参数必须带圆括号
@@ -77,20 +77,20 @@ module.exports = {
     "object-curly-spacing": "warn",
     // 不允许多个空格留白
     "no-multi-spaces": ["warn", {
-      "ignoreEOLComments": true,
+      ignoreEOLComments: true,
     }],
     // 数组、对象解构赋值设置
     "prefer-destructuring": ["warn", {
-      "VariableDeclarator": {
-        "array": true,
-        "object": true
+      VariableDeclarator: {
+        array: true,
+        object: true
       },
-      "AssignmentExpression": {
-        "array": false,
-        "object": true
+      AssignmentExpression: {
+        array: false,
+        object: true
       }
     }, {
-      "enforceForRenamedProperties": false
+      enforceForRenamedProperties: false
     }],
     // 提交的代码不允许有 debugger
     "no-debugger": "error",
@@ -102,7 +102,7 @@ module.exports = {
     // 禁止 if 语句中 return 语句之后有 else 块
     "no-else-return": "off",
     // 强制在parseInt()使用基数参数
-    "radix": "off",
+    radix: "off",
     // 不允许嵌套的三元运算符
     "no-nested-ternary": "off",
     // 使用箭头函数代替普通函数
@@ -131,20 +131,9 @@ module.exports = {
     "consistent-return": "warn",
     "no-self-compare": "off",
     "no-continue": "warn",
-    "space-before-function-paren": "off",
-    "no-restricted-syntax": "off",
     "no-await-in-loop": "off",
-    "import/newline-after-import": "warn",
-    "no-unused-vars": "warn",
-    "import/no-extraneous-dependencies": "warn",
-    "arrow-body-style": "off",
-    "no-else-return": "off",
-    "no-shadow": "warn",
     "no-unneeded-ternary": "off",
     "class-methods-use-this": "off",
-    "consistent-return": "warn",
-    "no-param-reassign": "off",
-    "global-require": "off",
     "prefer-object-spread": "off",
   }
 };
