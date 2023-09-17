@@ -102,14 +102,6 @@ module.exports = app => {
 
 启动我们的应用 `node index.js`，访问 `http://localhost:91`，将看到浏览器输出 `Hello, Heysoo`。
 
-
-## 依赖说明
-Node
-> Heysoo 对 Node 版本最低要求是 7.6.0 +（为了使用最新的 async/await 特性）。
-如果你的 Node 版本比较低，可以考虑通过 babel 进行 polyfill，参见 [如何 polyfill？](http://www.hisheng.net/works/heysoo/doc/index.html#/FAQ?id=%E5%A6%82%E4%BD%95-polyfill%EF%BC%9F)。
-
-> Node 最新 LTS 版本已经到了 8.12.0，后端语言不像浏览器，建议尽可能升级到比较新的版本并拥抱新的语言特性。
-
 ## 特性
 #### ![](http://www.hisheng.net/works/heysoo/doc/imgs/icons/config.png) 可配置，可拆卸
 Heysoo 最大的特点是所有的功能模块几乎都可以配置，可拆卸，是否使用可以完全由你自己决定，不需要的功能模块在应用启动时并不会加载。假设你将所有的功能模块禁用，那它就只是一个简单的增强版的 Koa，仅此而已。
@@ -120,16 +112,5 @@ Heysoo 并不是一个重新造轮子的 MVC 框架，我们的目标是尽可�
 #### ![](http://www.hisheng.net/works/heysoo/doc/imgs/icons/plugin.png) 插件化
 你可以通过 Heysoo 提供的插件机制来引入你自己实现的插件。例如如果你觉得 Heysoo 自带的数据库功能不是你想要的，你完全可以禁用它，之后引入你自己实现的数据库插件模块。
 
-#### ![](http://www.hisheng.net/works/heysoo/doc/imgs/icons/future.png) 拥抱 ES2015 和 async/await
-在 Node 环境下编写代码，我们没有理由不使用 ES2015+，同时通过适当的配置（babel）我们就可以使用更加方便的 async/await 特性代替繁琐的 promise / generator / co 等。
-
-
 ## 详细文档
-更详细的文档说明见： [Heysoo](http://www.hisheng.net/works/heysoo)
-
-<!-- ## TODO
-- [ ] CSRF 验证
-- [ ] Session 插件
-- [ ] Mock 插件
-- [ ] HTTP Client 插件
-- [ ] Master/Worker 模式 -->
+更详细的文档说明见： [Heysoo](http://heysoo.hisheng.net)
